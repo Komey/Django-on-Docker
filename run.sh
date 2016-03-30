@@ -4,10 +4,6 @@
 echo "Hi~~~"
 
 
-if [ ! -f /.root_passwd_set ]; then
-	/home/docker/code/set_root_pwd.sh
-fi
-
 MODULE=${MODULE:-website}
 echo "finding django project (module: ${MODULE})"
 sed -i "s#module=website.wsgi:application#module=${MODULE}.wsgi:application#g" /home/docker/code/uwsgi.ini
